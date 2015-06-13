@@ -14,11 +14,16 @@
 
 .box-content {
     width: 100%;
-    background-color: #1e252f;
+    background-color: #1E252F;
 
-    -webkit-box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow:    0px 1px 1px 0px rgba(0, 0, 0, 0.75);
-    box-shadow:         0px 1px 1px 0px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow:    0px 1px 1px 0px rgba(0, 0, 0, 0.25);
+    box-shadow:         0px 1px 1px 0px rgba(0, 0, 0, 0.25);
+
+    -webkit-transition: background-color 500ms ease-out;
+    -moz-transition: background-color 500ms ease-out;
+    -o-transition: background-color 500ms ease-out;
+    transition: background-color 500ms ease-out;
 }
 
 /* Left side */
@@ -33,6 +38,12 @@
 .left-side-box-content {
     height: 290px;
     position: relative;
+
+    overflow: hidden;
+}
+
+.left-side-box-content:hover {
+    cursor: pointer;
 }
 
 .large-stats h2 {
@@ -54,15 +65,28 @@
     position: absolute;
     right: 5px;
     bottom: 5px;
+
+    -webkit-transition: right 500ms ease-out;
+    -moz-transition: right 500ms ease-out;
+    -o-transition: right 500ms ease-out;
+    transition: right 500ms ease-out;
+}
+
+.tracker-logo p {
+    font-size: 10px;
+    line-height: 20px;
+    color: #697F9F;
+    margin-left: 25px;
+    display: none;
 }
 
 #tracker-endomondo {
-    background: url('../img/github.png') no-repeat center center;
+    background: url('../img/endomondo.png') no-repeat left center;
     background-size: contain;
 }
 
 #tracker-github {
-    background: url('../img/endomondo.png') no-repeat center center;
+    background: url('../img/github.png') no-repeat left center;
     background-size: contain;
 }
 
@@ -78,4 +102,8 @@
 
 .notes-box-content {
     height: 630px;
+
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
 }
