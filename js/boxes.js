@@ -1,27 +1,27 @@
-var endomondoWidth = 70;
-var githubWidth = 40;
-var animationTime = 350;
+var endomondoWidth = '70px';
+var githubWidth = '40px';
 var oldBackgroundColor = '#1E252F';
 var newBackgroundColor = '#252d39';
 
+var contentDiv, trackerDiv, animWidth;
 $('.left-side-box-content').hover(
     function() {
-        var contentDiv = $(this);
-        var trackerDiv = $(this).find('.tracker-logo');
-        var animWidth = (trackerDiv.is('#tracker-endomondo')) ? endomondoWidth : githubWidth;
+        contentDiv = $(this);
+        trackerDiv = $(this).find('.tracker-logo');
+        animWidth = (trackerDiv.is('#tracker-endomondo')) ? endomondoWidth : githubWidth;
 
         trackerDiv.find('p').show();
         contentDiv.css('background-color', newBackgroundColor);
-        trackerDiv.css('right', animWidth+'px');
+        trackerDiv.css('right', animWidth);
     },
 
     function() {
-        var contentDiv = $(this);
-        var trackerDiv = $(this).find('.tracker-logo');
+        contentDiv = $(this);
+        trackerDiv = $(this).find('.tracker-logo');
 
-        trackerDiv.css('right', '5px');
-
+        setTimeout(function() {trackerDiv.find('p').hide();}, 500);
         contentDiv.css('background-color', oldBackgroundColor);
+        trackerDiv.css('right', '5px');
     }
 );
 
@@ -39,8 +39,18 @@ $(".ripple").click(function(e) {
         ink.css({height: d, width: d});
     }
 
-    x = e.pageX - $(this).offset().left - ink.width()/2;
-    y = e.pageY - $(this).offset().top - ink.height()/2;
-
-    ink.css({top: y+'px', left: x+'px'}).addClass("animate");
+    /* Coding box uses 'bottom' for positioning, Notes box uses 'right' */
+    if ($(this).parent().is('#coding-box')) {
+        x = e.pageX - $(this).offset().left - ink.width()/2;
+        y = Math.abs(e.pageY - $(this).offset().top - $(this).height()) - ink.height()/2;
+        ink.css({bottom: y, left: x}).addClass("animate");
+    } else if ($(this).parent().is('#notes-box')) {
+        x = Math.abs(e.pageX - $(this).offset().left - $(this).width()) - ink.height()/2;
+        y = e.pageY - $(this).offset().top - ink.height()/2;
+        ink.css({top: y+'px', right: x+'px'}).addClass("animate");
+    } else {
+        x = e.pageX - $(this).offset().left - ink.width()/2;
+        y = e.pageY - $(this).offset().top - ink.height()/2;
+        ink.css({top: y+'px', left: x+'px'}).addClass("animate");
+    }
 });

@@ -9,7 +9,7 @@ html, body {
 }
 
 html {
-    background-color: #1e252f;
+    background-color: #1E252F;
 }
 
 body {
@@ -24,6 +24,7 @@ body {
 * {
     font-family: 'Open Sans', sans-serif !important;
     color: #FFF;
+    -webkit-font-smoothing: antialiased;
 }
 
 /* Helpful classes */

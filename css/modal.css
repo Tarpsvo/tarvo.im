@@ -1,0 +1,5 @@
+.modal-opened {
+    height: 660px !important;
+    width: 680px !important;
+    z-index: 1000;
+}

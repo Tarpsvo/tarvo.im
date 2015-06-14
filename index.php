@@ -8,14 +8,15 @@
         <link rel="stylesheet" href="css/main.css" charset="utf-8">
         <link rel="stylesheet" href="css/boxes.css" charset="utf-8">
         <link rel="stylesheet" href="css/ripple.css" charset="utf-8">
+        <link rel="stylesheet" href="css/modal.css" charset="utf-8">
     </head>
 
     <body>
         <div class="absolute-center" id="page-content-wrap">
-            <div class="left-side-box" style="top: 0;">
+            <div class="left-side-box" style="top: 0;" id="sport-box">
                 <h1 class="box-title">Sport</h1>
 
-                <div class="box-content left-side-box-content ripple">
+                <div class="box-content left-side-box-content ripple modal-trigger">
                     <div class="large-stats absolute-center">
                         <h2>423 workouts</h2>
                         <h2>6923 kilometres</h2>
@@ -25,10 +26,10 @@
                 </div>
             </div>
 
-            <div class="left-side-box" style="bottom: 0;">
+            <div class="left-side-box" style="bottom: 0;" id="coding-box">
                 <h1 class="box-title">Coding</h1>
 
-                <div class="box-content left-side-box-content ripple">
+                <div class="box-content left-side-box-content ripple modal-trigger">
                     <div class="large-stats absolute-center">
                         <h2>6 projects</h2>
                         <h2>123 commits</h2>
@@ -38,15 +39,19 @@
                 </div>
             </div>
 
-            <div class="notes-box">
+            <div id="notes-box">
                 <h1 class="box-title">Notes</h1>
 
-                <div class="box-content notes-box-content ripple">
+                <div id="notes-box-content" class="box-content ripple modal-trigger">
+                    <div class="large-stats absolute-center">
+                        <h2>todo</h2>
+                    </div>
                 </div>
             </div>
         </div>
 
         <script src="js/jquery-1.11.3.min.js"></script>
         <script src="js/boxes.js"></script>
+        <script src="js/modal.js"></script>
     </body>
 </html>
