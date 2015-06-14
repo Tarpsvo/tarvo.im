@@ -11,6 +11,8 @@ html, body {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+
+    overflow: hidden;
 }
 
 html {
@@ -24,12 +26,31 @@ body {
 #page-content-wrap {
     height: 660px;
     width: 680px;
+    display: none;
 }
 
 * {
     font-family: 'Open Sans', sans-serif !important;
     color: #FFF;
     -webkit-font-smoothing: antialiased;
+}
+
+/* Loading styles */
+.page-loading-indicator {
+    height: 64px;
+    width: 64px;
+    background: url('../img/loading-spin.svg') no-repeat center center;
+    background-size: contain;
+}
+
+.modal-loading-indicator {
+    height: 24px;
+    width: 256px;
+    background: url('../img/loading-cylon.svg') no-repeat center center;
+    background-size: contain;
+    margin: 0px auto;
+    margin-top: 5px;
+    display: none;
 }
 
 /* Helpful classes */

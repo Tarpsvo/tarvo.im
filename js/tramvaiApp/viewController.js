@@ -17,8 +17,8 @@
             div.removeClass('box-content');
             div.removeClass('left-side-box-content');
             div.removeClass('modal-trigger');
-            div.find('.close-modal-button').fadeIn(500);
-            div.find('#center-loading').fadeIn(500);
+            div.find('.close-modal-button').fadeIn(1500);
+            div.find('.modal-loading-indicator').fadeIn(1500);
 
             div.css('margin-top', marginTop);
 
@@ -38,7 +38,7 @@
             div.addClass('left-side-box-content');
             div.addClass('modal-trigger');
             div.find('.close-modal-button').hide();
-            div.find('#center-loading').hide();
+            div.find('.modal-loading-indicator').hide();
 
             div.css('margin-top', '0px');
 
@@ -48,5 +48,12 @@
 
             $scope.modalOpen = false;
         };
+
+        var displayContent = function() {
+            $('.page-loading-indicator').fadeOut(500);
+            $('#page-content-wrap').fadeIn(1000);
+        }
+
+        displayContent();
     }
 })();

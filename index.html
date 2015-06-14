@@ -9,10 +9,11 @@
         <link rel="stylesheet" href="css/boxes.css" charset="utf-8">
         <link rel="stylesheet" href="css/ripple.css" charset="utf-8">
         <link rel="stylesheet" href="css/modal.css" charset="utf-8">
-        <link rel="stylesheet" href="css/loading.css" charset="utf-8">
     </head>
 
     <body>
+        <div class="absolute-center page-loading-indicator"></div>
+
         <div class="absolute-center" id="page-content-wrap">
             <div class="left-side-box" style="top: 0;" id="sport-box">
                 <h1 class="box-title">Sport</h1>
@@ -23,13 +24,9 @@
                     <div class="large-stats absolute-center">
                         <h2>423 workouts</h2>
                         <h2>6923 kilometres</h2>
-                        <div id="center-loading">
-                            <div class="progress">
-                                <div class="indeterminate"></div>
-                            </div>
-                        </div>
-                    </div>
 
+                        <div class="modal-loading-indicator"></div>
+                    </div>
 
                     <div class="tracker-logo" id="tracker-endomondo"><p>endomondo</p></div>
                 </div>
@@ -45,11 +42,7 @@
                         <h2>6 projects</h2>
                         <h2>123 commits</h2>
 
-                        <div id="center-loading">
-                            <div class="progress">
-                                <div class="indeterminate"></div>
-                            </div>
-                        </div>
+                        <div class="modal-loading-indicator"></div>
                     </div>
 
                     <div class="tracker-logo" id="tracker-github"><p>github</p></div>
@@ -65,11 +58,7 @@
                     <div class="large-stats absolute-center">
                         <h2>todo</h2>
 
-                        <div id="center-loading">
-                            <div class="progress">
-                                <div class="indeterminate"></div>
-                            </div>
-                        </div>
+                        <div class="modal-loading-indicator"></div>
                     </div>
                 </div>
             </div>
