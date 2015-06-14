@@ -1,11 +1,15 @@
 .modal-opened {
-    height: 660px !important;
-    width: 680px !important;
-    cursor: default !important;
+    height: 680px !important;
+    width: 680px;
+    background-color: #1E252F;
+    cursor: default;
+    overflow: hidden;
+
     box-shadow:rgba(0, 0, 0, 0.3) 0 16px 16px 0;
     -webkit-box-shadow:rgba(0, 0, 0, 0.3) 0 16px 16px 0;
     -moz-box-shadow:rgba(0, 0, 0, 0.3) 0 16px 16px 0;
 
+    position: relative;
     z-index: 1000;
 }
 
@@ -15,4 +19,13 @@
 
 .modal-opened #tracker-github {
     right: 40px !important;
+}
+
+.close-modal-button {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    font-size: 48px;
+    cursor: pointer;
+    display: none;
 }

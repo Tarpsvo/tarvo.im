@@ -36,6 +36,11 @@
     user-select: none;
 }
 
+.box-content:hover {
+    background-color: #252D39;
+    cursor: pointer;
+}
+
 /* Left side */
 .left-side-box {
     width: 320px;
@@ -50,11 +55,6 @@
     position: relative;
 
     overflow: hidden;
-}
-
-.left-side-box-content:hover {
-    background-color: #252D39;
-    cursor: pointer;
 }
 
 .large-stats h2 {
@@ -116,7 +116,6 @@
 #notes-box-content {
     height: 630px;
 
-    cursor: pointer;
     position: relative;
     overflow: hidden;
 }

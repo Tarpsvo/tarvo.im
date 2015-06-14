@@ -16,7 +16,9 @@
             <div class="left-side-box" style="top: 0;" id="sport-box">
                 <h1 class="box-title">Sport</h1>
 
-                <div class="box-content left-side-box-content ripple modal-trigger" ng-click="openModal($event)">
+                <div class="box-content left-side-box-content ripple modal-trigger" ng-click="modalOpen || openModal($event)">
+                    <a class="close-modal-button" ng-click="closeModal($event); $event.stopPropagation()">×</a>
+
                     <div class="large-stats absolute-center">
                         <h2>423 workouts</h2>
                         <h2>6923 kilometres</h2>
@@ -29,7 +31,9 @@
             <div class="left-side-box" style="bottom: 0;" id="coding-box">
                 <h1 class="box-title">Coding</h1>
 
-                <div class="box-content left-side-box-content ripple modal-trigger" ng-click="openModal($event)">
+                <div class="box-content left-side-box-content ripple modal-trigger" ng-click="modalOpen || openModal($event)">
+                    <a class="close-modal-button" ng-click="closeModal($event); $event.stopPropagation()">×</a>
+
                     <div class="large-stats absolute-center">
                         <h2>6 projects</h2>
                         <h2>123 commits</h2>
@@ -42,7 +46,9 @@
             <div id="notes-box">
                 <h1 class="box-title">Notes</h1>
 
-                <div id="notes-box-content" class="box-content ripple modal-trigger" ng-click="openModal($event)">
+                <div id="notes-box-content" class="box-content ripple modal-trigger" ng-click="modalOpen || openModal($event)">
+                    <a class="close-modal-button" ng-click="closeModal($event); $event.stopPropagation()">×</a>
+
                     <div class="large-stats absolute-center">
                         <h2>todo</h2>
                     </div>
