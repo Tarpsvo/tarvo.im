@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="tramvaiApp" ng-controller="ViewController">
     <head>
         <meta charset="utf-8">
         <title>Tramvai.im</title>
@@ -16,7 +16,7 @@
             <div class="left-side-box" style="top: 0;" id="sport-box">
                 <h1 class="box-title">Sport</h1>
 
-                <div class="box-content left-side-box-content ripple modal-trigger">
+                <div class="box-content left-side-box-content ripple modal-trigger" ng-click="openModal($event)">
                     <div class="large-stats absolute-center">
                         <h2>423 workouts</h2>
                         <h2>6923 kilometres</h2>
@@ -29,7 +29,7 @@
             <div class="left-side-box" style="bottom: 0;" id="coding-box">
                 <h1 class="box-title">Coding</h1>
 
-                <div class="box-content left-side-box-content ripple modal-trigger">
+                <div class="box-content left-side-box-content ripple modal-trigger" ng-click="openModal($event)">
                     <div class="large-stats absolute-center">
                         <h2>6 projects</h2>
                         <h2>123 commits</h2>
@@ -42,7 +42,7 @@
             <div id="notes-box">
                 <h1 class="box-title">Notes</h1>
 
-                <div id="notes-box-content" class="box-content ripple modal-trigger">
+                <div id="notes-box-content" class="box-content ripple modal-trigger" ng-click="openModal($event)">
                     <div class="large-stats absolute-center">
                         <h2>todo</h2>
                     </div>
@@ -50,9 +50,16 @@
             </div>
         </div>
 
-        <script src="js/jquery-1.11.3.min.js"></script>
-        <script src="js/boxes.js"></script>
-        <script src="js/modal.js"></script>
-        <script src="js/ripple.js"></script>
+        <!-- Main scripts -->
+        <script src="js/jquery-1.11.3.js"></script>
+        <script src="js/angular.js"></script>
+
+        <!-- Angular -->
+        <script src="js/tramvaiApp.js"></script>
+        <script src="js/tramvaiApp/viewController.js"></script>
+        <script src="js/tramvaiApp/sportController.js"></script>
+
+        <!-- UI effects -->
+        <script src="js/ui/ripple.js"></script>
     </body>
 </html>

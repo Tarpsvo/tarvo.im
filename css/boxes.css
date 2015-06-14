@@ -53,6 +53,7 @@
 }
 
 .left-side-box-content:hover {
+    background-color: #252D39;
     cursor: pointer;
 }
 
@@ -98,6 +99,9 @@
     background: url('../img/github.png') no-repeat left center;
     background-size: contain;
 }
+
+#sport-box .box-content:hover #tracker-endomondo {right: 70px;}
+#coding-box .box-content:hover #tracker-github {right: 40px;}
 
 /* Right side */
 #notes-box {
