@@ -15,6 +15,7 @@ Live version is accessible at [tramvai.im](http://tramvai.im/)
 ### Used resources
 * [Endomondo logo](https://www.iconfinder.com/icons/143904/edomondo_icon)
 * [Github logo](https://github.com/logos)
+* [Ripple effect](http://codepen.io/440design/pen/iEztk)
 
 ### Licensed under the GNU GPL v2.0 license
 Copyright (C) 2015 T. Reinpalu
