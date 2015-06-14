@@ -53,5 +53,6 @@
         <script src="js/jquery-1.11.3.min.js"></script>
         <script src="js/boxes.js"></script>
         <script src="js/modal.js"></script>
+        <script src="js/ripple.js"></script>
     </body>
 </html>
