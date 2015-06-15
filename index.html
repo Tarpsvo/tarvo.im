@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="tramvaiApp" ng-controller="ViewController">
+<html>
     <head>
         <meta charset="utf-8">
         <title>Tramvai.im</title>
@@ -12,14 +12,14 @@
     </head>
 
     <body>
-        <div class="absolute-center page-loading-indicator"></div>
+        <div id="page-loading-indicator" class="absolute-center"></div>
 
         <div class="absolute-center" id="page-content-wrap">
             <div class="left-side-box" style="top: 0;" id="sport-box">
                 <h1 class="box-title">SPORT</h1>
 
-                <div class="box-content left-side-box-content ripple modal-trigger" ng-click="modalOpen || openModal($event)">
-                    <a class="close-modal-button" ng-click="closeModal($event); $event.stopPropagation()">×</a>
+                <div class="box-content left-side-box-content ripple modal-trigger">
+                    <a class="close-modal-button">×</a>
 
                     <div class="large-stats absolute-center">
                         <h2>423 workouts</h2>
@@ -35,8 +35,8 @@
             <div class="left-side-box" style="bottom: 0;" id="coding-box">
                 <h1 class="box-title">CODING</h1>
 
-                <div class="box-content left-side-box-content ripple modal-trigger" ng-click="modalOpen || openModal($event)">
-                    <a class="close-modal-button" ng-click="closeModal($event); $event.stopPropagation()">×</a>
+                <div class="box-content left-side-box-content ripple modal-trigger">
+                    <a class="close-modal-button">×</a>
 
                     <div class="large-stats absolute-center">
                         <h2>6 projects</h2>
@@ -52,8 +52,8 @@
             <div id="notes-box">
                 <h1 class="box-title">NOTES</h1>
 
-                <div id="notes-box-content" class="box-content ripple modal-trigger" ng-click="modalOpen || openModal($event)">
-                    <a class="close-modal-button" ng-click="closeModal($event); $event.stopPropagation()">×</a>
+                <div id="notes-box-content" class="box-content ripple modal-trigger">
+                    <a class="close-modal-button">×</a>
 
                     <div class="large-stats absolute-center">
                         <h2>todo</h2>
@@ -66,12 +66,11 @@
 
         <!-- Main scripts -->
         <script src="js/jquery-1.11.3.js"></script>
-        <script src="js/angular.js"></script>
+        <script src="js/underscore.js"></script>
+        <script src="js/backbone.js"></script>
 
         <!-- Angular -->
-        <script src="js/tramvaiApp.js"></script>
-        <script src="js/tramvaiApp/viewController.js"></script>
-        <script src="js/tramvaiApp/sportController.js"></script>
+        <script src="js/tramvai/mainPage.js"></script>
 
         <!-- UI effects -->
         <script src="js/ui/ripple.js"></script>
