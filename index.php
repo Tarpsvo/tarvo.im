@@ -1,3 +1,8 @@
+<?php
+require_once('api/dataApi.php');
+$dataApi = new dataApi;
+$githubGeneralStats = $dataApi->getGithubGeneralStats();
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -39,8 +44,8 @@
                     <a class="close-modal-button">×</a>
 
                     <div class="large-stats absolute-center">
-                        <h2>6 projects</h2>
-                        <h2>123 commits</h2>
+                        <h2><?php echo $githubGeneralStats['repository_count']; ?> repos</h2>
+                        <h2><?php echo $githubGeneralStats['total_commits']; ?> commits</h2>
 
                         <div class="modal-loading-indicator"></div>
                     </div>
