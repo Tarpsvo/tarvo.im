@@ -49,8 +49,10 @@ class githubApi {
             CURLOPT_RETURNTRANSFER => 1,
             CURLOPT_HEADER => 0,
             CURLOPT_USERAGENT => "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36",
-            CURLOPT_USERPWD => $this->githubAuthenticationData,
         ));
+
+        if (!empty($this->githubAuthenticationData)) curl_setopt($curl, CURLOPT_USERPWD, $this->githubAuthenticationData);
+
         return json_decode(curl_exec($curl));
     }
 }
