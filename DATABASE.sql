@@ -1,0 +1,14 @@
+CREATE TABLE IF NOT EXISTS `github_general` (
+    `id`	INTEGER PRIMARY KEY AUTOINCREMENT,
+	`created`	INTEGER DEFAULT CURRENT_TIMESTAMP,
+	`repository_count`	INTEGER,
+	`total_commits`	INTEGER
+);
+
+CREATE TABLE IF NOT EXISTS `github_detailed` (
+	`id`	INTEGER PRIMARY KEY AUTOINCREMENT,
+	`created`	INTEGER DEFAULT CURRENT_TIMESTAMP,
+	`repository_name`	TEXT NOT NULL,
+	`commits`	INTEGER NOT NULL,
+	`last_commit`	INTEGER
+);
