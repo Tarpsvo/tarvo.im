@@ -17,6 +17,8 @@ Live version is accessible at [tarvo.im](http://tarvo.im/)
 * [Github logo](https://github.com/logos)
 * [Ripple effect](http://codepen.io/440design/pen/iEztk)
 * [Loading indicators](https://github.com/jxnblk/loading)
+* [Endomondo API example](https://github.com/danekszy/phpEndomondoAPI)
+* [UUID v5 generator](https://github.com/ramsey/uuid)
 
 ### Licensed under the GNU GPL v2.0 license
 Copyright (C) 2015 T. Reinpalu
