@@ -2,6 +2,7 @@
 require_once('api/dataApi.php');
 $dataApi = new dataApi;
 $githubGeneralStats = $dataApi->getGithubGeneralStats();
+$endomondoGeneralStats = $dataApi->getEndomondoGeneralStats();
 ?>
 <!DOCTYPE html>
 <html>
@@ -27,8 +28,8 @@ $githubGeneralStats = $dataApi->getGithubGeneralStats();
                     <a class="close-modal-button">×</a>
 
                     <div class="large-stats absolute-center">
-                        <h2>423 workouts</h2>
-                        <h2>6923 kilometres</h2>
+                        <h2><?php echo $endomondoGeneralStats['total_workouts']; ?> workouts</h2>
+                        <h2><?php echo $endomondoGeneralStats['total_kilometres']; ?> kilometres</h2>
 
                         <div class="modal-loading-indicator"></div>
                     </div>
