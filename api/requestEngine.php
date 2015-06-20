@@ -1,8 +1,7 @@
 <?php
-class requestEngine {
-    private $githubAuth = "";
-    private $endomondoAuth = "";
+require_once '/mainConfig.php';
 
+class requestEngine {
     public function get($url, $queryData = null) {
         if (isset($queryData)) $url .= '?'.http_build_query($queryData);
 
@@ -14,7 +13,7 @@ class requestEngine {
             CURLOPT_USERAGENT => "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36",
         ));
 
-        if (strpos($url, 'github') > 0 && isset($this->githubAuth)) curl_setopt($ch, CURLOPT_USERPWD, $this->githubAuth);
+        if (strpos($url, 'github') > 0 && defined(mainConfig::GITHUB_AUTH_DATA)) curl_setopt($ch, CURLOPT_USERPWD, mainConfig::GITHUB_AUTH_DATA);
 
         $response = curl_exec($ch);
 

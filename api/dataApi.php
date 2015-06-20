@@ -1,10 +1,11 @@
 <?php
+require_once '/mainConfig.php';
+
 class dataApi {
-    private $db;
+    private $connection;
 
     public function __construct() {
-        $dbFile = dirname(__FILE__).'/tramvai.db';
-        $this->db = new SQLite3($dbFile);
+        $this->connection = mainConfig::connectToDatabase();
     }
 
     /**
@@ -14,9 +15,10 @@ class dataApi {
     public function getGithubGeneralStats() {
         $dataArray = array('repository_count' => 0, 'total_commits' => 0);
 
-        $query = "SELECT repository_count, total_commits FROM github_general ORDER BY 'created' DESC LIMIT 1;";
-        $result = $this->db->query($query);
-        $result = $result->fetchArray(SQLITE3_ASSOC);
+        $query = "SELECT repository_count, total_commits FROM github_general ORDER BY 'created' DESC LIMIT 1";
+
+        $result = $this->connection->query($query);
+        $result = $result->fetchAll(PDO::FETCH_ASSOC)[0];
 
         if (!empty($result)) {
             $dataArray['repository_count'] = (isset($result['repository_count'])) ? $result['repository_count'] : 0;

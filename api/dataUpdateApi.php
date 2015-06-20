@@ -1,14 +1,14 @@
 <?php
-require_once('githubApi.php');
+require_once '/mainConfig.php';
+require_once '/githubApi.php';
 
 class dataUpdateApi {
-    private $db, $githubApi;
+    private $connection, $githubApi;
 
     public function __construct() {
         $this->githubApi = new githubApi;
 
-        $dbFile = dirname(__FILE__).'/tramvai.db';
-        $this->db = new SQLite3($dbFile);
+        $this->connection = mainConfig::connectToDatabase();
     }
 
     /**
@@ -20,8 +20,11 @@ class dataUpdateApi {
 
         if (isset($repositoryCount) && isset($totalCommits)) {
             if (is_numeric($repositoryCount) && is_numeric($totalCommits)) {
-                $query = "INSERT INTO github_general ('repository_count', 'total_commits') VALUES (".$repositoryCount.", ".$totalCommits.")";
-                $this->db->exec($query);
+                $unpreparedSQL = "INSERT INTO github_general (repository_count, total_commits) VALUES (:repository_count, :total_commits)";
+                $query = $this->connection->prepare($unpreparedSQL);
+                $query->bindParam(':repository_count', $repositoryCount);
+                $query->bindParam(':total_commits', $totalCommits);
+                $query->execute();
             } else {
                 // FIXME Value(s) not numeric
             }
