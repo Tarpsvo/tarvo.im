@@ -1,7 +1,7 @@
 <?php
-require_once '/mainConfig.php';
-require_once '/requestEngine.php';
-require_once '../utils/Uuid.php';
+require_once __DIR__.'/mainConfig.php';
+require_once __DIR__.'/requestEngine.php';
+require_once __DIR__.'/../utils/Uuid.php';
 
 class endomondoApi {
     const URL_AUTH = 'https://api.mobile.endomondo.com/mobile/auth';

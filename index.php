@@ -1,5 +1,5 @@
 <?php
-require_once('api/dataApi.php');
+require __DIR__.'/api/dataApi.php';
 $dataApi = new dataApi;
 $githubGeneralStats = $dataApi->getGithubGeneralStats();
 $endomondoGeneralStats = $dataApi->getEndomondoGeneralStats();

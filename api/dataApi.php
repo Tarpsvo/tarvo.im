@@ -1,5 +1,5 @@
 <?php
-require_once '/mainConfig.php';
+require_once __DIR__.'/mainConfig.php';
 
 class dataApi {
     private $connection;

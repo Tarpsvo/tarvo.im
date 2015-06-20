@@ -1,7 +1,7 @@
 <?php
-require_once '/mainConfig.php';
-require_once '/githubApi.php';
-require_once '/endomondoApi.php';
+require_once __DIR__.'/mainConfig.php';
+require_once __DIR__.'/githubApi.php';
+require_once __DIR__.'/endomondoApi.php';
 
 class dataUpdateApi {
     private $connection, $githubApi, $endomondoApi;

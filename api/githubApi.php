@@ -1,6 +1,6 @@
 <?php
-require_once '/mainConfig.php';
-require_once '/requestEngine.php';
+require_once __DIR__.'/mainConfig.php';
+require_once __DIR__.'/requestEngine.php';
 
 class githubApi {
     const USER_URL = "https://api.github.com/users/tramvai";
