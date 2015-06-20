@@ -4,19 +4,20 @@ Live version is accessible at [tarvo.im](http://tarvo.im/)
 
 ### Current functionalities
 * Polished layout and animations
-* Basic GitHub data querying
+* GitHub data querying
+* Endomondo data querying (all workouts are imported to local database)
 
 ### TODO list
-* Endomondo data querying
 * Notes system (blog)
-* jQuery animations
-* Data stored locally and updated by a cron job
+* Detailed views and stats analysis
 
 ### Used resources
 * [Endomondo logo](https://www.iconfinder.com/icons/143904/edomondo_icon)
 * [Github logo](https://github.com/logos)
 * [Ripple effect](http://codepen.io/440design/pen/iEztk)
 * [Loading indicators](https://github.com/jxnblk/loading)
+* [Endomondo API example](https://github.com/danekszy/phpEndomondoAPI)
+* [UUID v5 generator](https://github.com/ramsey/uuid)
 
 ### Licensed under the GNU GPL v2.0 license
 Copyright (C) 2015 T. Reinpalu
