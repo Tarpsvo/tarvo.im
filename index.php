@@ -7,7 +7,7 @@ $githubGeneralStats = $dataApi->getGithubGeneralStats();
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Tramvai.im</title>
+        <title>Tarvo.im</title>
 
         <link rel="stylesheet" href="css/reset.css" charset="utf-8">
         <link rel="stylesheet" href="css/main.css" charset="utf-8">

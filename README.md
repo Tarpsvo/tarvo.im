@@ -1,13 +1,13 @@
 ## Tramvai.im
 ### Personal website
-Live version is accessible at [tramvai.im](http://tramvai.im/)
+Live version is accessible at [tarvo.im](http://tarvo.im/)
 
 ### Current functionalities
-* N/A
+* Polished layout and animations
+* Basic GitHub data querying
 
 ### TODO list
 * Endomondo data querying
-* GitHub data querying
 * Notes system (blog)
 * jQuery animations
 * Data stored locally and updated by a cron job
