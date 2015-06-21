@@ -43,4 +43,11 @@ class dataApi {
 
         return $dataArray;
     }
+
+    public function getGithubRepos() {
+        $query = "SELECT * FROM github_repos";
+        $result = $this->connection->query($query);
+        $result = $result->fetchAll(PDO::FETCH_OBJ);
+        return $result;
+    }
 }

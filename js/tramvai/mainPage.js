@@ -8,8 +8,10 @@ var mainPage = (function() {
         div.removeClass('box-content modal-trigger');
         div.css('margin-top', marginTop);
 
+        if (div.parent().is('#coding-box')) div.find('.large-stats').hide();
         div.find('.close-modal-button').fadeIn(500);
         div.find('.modal-loading-indicator').fadeIn(500);
+        div.find('.modal-content').fadeIn(500);
 
         if (div.parent().is('#notes-box')) {
             div.css('margin-left', '-360px');
@@ -24,8 +26,10 @@ var mainPage = (function() {
         div.addClass('box-content modal-trigger');
         div.css('margin-top', '0px');
 
+        if (div.parent().is('#coding-box')) div.find('.large-stats').fadeIn(500);
         div.find('.close-modal-button').hide();
         div.find('.modal-loading-indicator').hide();
+        div.find('.modal-content').hide();
 
         if (div.parent().is('#notes-box')) {
             div.css('margin-left', '0px');

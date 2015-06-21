@@ -3,6 +3,7 @@ require __DIR__.'/api/dataApi.php';
 $dataApi = new dataApi;
 $githubGeneralStats = $dataApi->getGithubGeneralStats();
 $endomondoGeneralStats = $dataApi->getEndomondoGeneralStats();
+$githubRepos = $dataApi->getGithubRepos();
 ?>
 <!DOCTYPE html>
 <html>
@@ -41,11 +42,15 @@ $endomondoGeneralStats = $dataApi->getEndomondoGeneralStats();
                 <div class="box-content left-side-box-content modal-trigger">
                     <a class="close-modal-button">×</a>
 
-                    <div class="large-stats absolute-center">
-                        <h2><?php echo $githubGeneralStats['total_repos']; ?> repos</h2>
-                        <h2><?php echo $githubGeneralStats['total_commits']; ?> commits</h2>
+                    <div class="modal-content-wrapper">
+                        <div class="large-stats absolute-center">
+                            <h2><?php echo $githubGeneralStats['total_repos']; ?> repos</h2>
+                            <h2><?php echo $githubGeneralStats['total_commits']; ?> commits</h2>
+                        </div>
 
-                        <div class="modal-loading-indicator"></div>
+                        <div class="modal-content absolute-center">
+                            <?php include 'tmpl/github-main.php'; ?>
+                        </div>
                     </div>
                 </div>
             </div>

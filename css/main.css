@@ -29,7 +29,7 @@ body {
     display: none;
 }
 
-h1, h2, p, a {
+h1, h2, h3, p, a {
     font-family: 'Open Sans', sans-serif;
     color: #FFF;
     -webkit-font-smoothing: antialiased;
