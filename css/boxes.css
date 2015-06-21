@@ -63,40 +63,6 @@
     width: 100%;
 }
 
-.tracker-logo {
-    height: 20px;
-    width: 20px;
-
-    position: absolute;
-    right: 5px;
-    bottom: 5px;
-
-    -webkit-transition: right 500ms ease-in-out;
-    -moz-transition: right 500ms ease-in-out;
-    -o-transition: right 500ms ease-in-out;
-    transition: right 500ms ease-in-out;
-}
-
-.tracker-logo p {
-    font-size: 10px;
-    line-height: 20px;
-    color: #697F9F;
-    margin-left: 25px;
-}
-
-#tracker-endomondo {
-    background: url('../img/endomondo.png') no-repeat left center;
-    background-size: contain;
-}
-
-#tracker-github {
-    background: url('../img/github.png') no-repeat left center;
-    background-size: contain;
-}
-
-#sport-box .box-content:hover #tracker-endomondo {right: 70px;}
-#coding-box .box-content:hover #tracker-github {right: 40px;}
-
 /* Right side */
 #notes-box {
     width: 320px;

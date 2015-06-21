@@ -9,29 +9,26 @@ class dataUpdateApi {
     public function __construct() {
         $this->githubApi = new githubApi;
         $this->endomondoApi = new endomondoApi;
-
         $this->connection = mainConfig::connectToDatabase();
     }
 
-    /**
-     * Retrieves Github general stats through the Github API and saves them into local database
-     */
     public function updateGithubGeneralStats() {
-        $repositoryCount = $this->githubApi->getNumberOfRepos();
-        $totalCommits = $this->githubApi->getNumberOfCommits();
+        $reposList = $this->githubApi->getListOfRepos();
 
-        if (isset($repositoryCount) && isset($totalCommits)) {
-            if (is_numeric($repositoryCount) && is_numeric($totalCommits)) {
-                $unpreparedSQL = "INSERT INTO github_general (repository_count, total_commits) VALUES (:repository_count, :total_commits)";
-                $query = $this->connection->prepare($unpreparedSQL);
-                $query->bindParam(':repository_count', $repositoryCount);
-                $query->bindParam(':total_commits', $totalCommits);
-                $query->execute();
-            } else {
-                // FIXME Value(s) not numeric
-            }
-        } else {
-            // FIXME Value(s) null
+        foreach ($reposList as $key => $repo) {
+            $commits = $this->githubApi->getNumberOfCommitsFromRepoUrl($repo->url);
+
+            $unpreparedSQL = "REPLACE INTO github_repos (id, name, created, pushed, commits, html_url)
+                                VALUES (:id, :name, :created, :pushed, :commits, :html_url)";
+
+            $query = $this->connection->prepare($unpreparedSQL);
+            $query->bindParam(':id', $repo->id);
+            $query->bindParam(':name', $repo->name);
+            $query->bindParam(':created', $repo->created_at);
+            $query->bindParam(':pushed', $repo->pushed_at);
+            $query->bindParam(':commits', $commits);
+            $query->bindParam(':html_url', $repo->html_url);
+            $query->execute();
         }
     }
 

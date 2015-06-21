@@ -2,7 +2,7 @@
 require_once __DIR__.'/api/mainConfig.php';
 require_once __DIR__.'/api/dataUpdateApi.php';
 
-$sqlFile = 'DATABASE.sql';
+$sqlFile = __DIR__.'/DATABASE.sql';
 
 $dataUpdateApi = new dataUpdateApi;
 $connection = mainConfig::connectToDatabase();

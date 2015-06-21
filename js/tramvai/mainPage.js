@@ -1,57 +1,45 @@
-(function($){
+var mainPage = (function() {
+    openModal = function(e) {
+        e.stopPropagation();
+        var div = $(e.currentTarget);
+        var marginTop = (div.parent().is('#coding-box')) ? '-370px' : '-30px';
 
-    var mainPage = Backbone.View.extend({
-        el: $('body'),
-        loadingIndicator: $('#page-loading-indicator'),
-        pageContent: $('#page-content-wrap'),
+        div.addClass('modal-opened');
+        div.removeClass('box-content modal-trigger');
+        div.css('margin-top', marginTop);
 
-        events: {
-            'click .modal-trigger.box-content': 'openView',
-            'click .close-modal-button': 'closeView'
-        },
+        div.find('.close-modal-button').fadeIn(500);
+        div.find('.modal-loading-indicator').fadeIn(500);
 
-        initialize: function() {
-            _.bindAll(this, 'displayContent', 'openView');
-            this.displayContent();
-        },
-
-        displayContent: function() {
-            $(this.loadingIndicator).fadeOut(500);
-            $(this.pageContent).fadeIn(1000);
-        },
-
-        openView: function(e) {
-            var div = $(e.currentTarget);
-            var marginTop = (div.parent().is('#coding-box')) ? '-370px' : '-30px';
-
-            div.addClass('modal-opened');
-            div.removeClass('box-content modal-trigger');
-            div.css('margin-top', marginTop);
-
-            div.find('.close-modal-button').fadeIn(1500);
-            div.find('.modal-loading-indicator').fadeIn(1500);
-
-            if (div.parent().is('#notes-box')) {
-                div.css('margin-left', '-360px');
-            }
-        },
-
-        closeView: function(e) {
-            var div = $(e.currentTarget).parent();
-
-            div.removeClass('modal-opened');
-            div.addClass('box-content modal-trigger');
-            div.css('margin-top', '0px');
-
-            div.find('.close-modal-button').hide();
-            div.find('.modal-loading-indicator').hide();
-
-
-            if (div.parent().is('#notes-box')) {
-                div.css('margin-left', '0px');
-            }
+        if (div.parent().is('#notes-box')) {
+            div.css('margin-left', '-360px');
         }
-    });
+    }
 
-    var mainPage = new mainPage();
-})(jQuery);
+    closeModal = function(e) {
+        e.stopPropagation();
+        var div = $(e.currentTarget).parent();
+
+        div.removeClass('modal-opened');
+        div.addClass('box-content modal-trigger');
+        div.css('margin-top', '0px');
+
+        div.find('.close-modal-button').hide();
+        div.find('.modal-loading-indicator').hide();
+
+        if (div.parent().is('#notes-box')) {
+            div.css('margin-left', '0px');
+        }
+    }
+
+    displayContent = function() {
+        $('#page-loading-indicator').fadeOut(500);
+        $('#page-content-wrap').fadeIn(1000);
+    }
+
+    return {
+        openModal: openModal,
+        closeModal: closeModal,
+        displayContent: displayContent
+    }
+})();

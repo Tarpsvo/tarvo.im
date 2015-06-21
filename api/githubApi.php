@@ -4,6 +4,7 @@ require_once __DIR__.'/requestEngine.php';
 
 class githubApi {
     const USER_URL = "https://api.github.com/users/tramvai";
+    const REPOS_URL = "https://api.github.com/users/tramvai/repos";
 
     private $requestEngine;
 
@@ -11,37 +12,25 @@ class githubApi {
         $this->requestEngine = new requestEngine;
     }
 
-    /**
-     * Retrieves the number of the user's public repositories from github API
-     * @return integer  Number of repositories
-     */
-    public function getNumberOfRepos() {
-        $userData = json_decode($this->requestEngine->get(githubApi::USER_URL));
+    public function getListOfRepos() {
+        return $this->checkForRateLimitError(json_decode($this->requestEngine->get(githubApi::REPOS_URL)));
+    }
 
-        if (isset($userData->public_repos) && is_numeric($userData->public_repos)) {
-            return $userData->public_repos;
+    public function getNumberOfCommitsFromRepoUrl($repoUrl) {
+        $contributorsDataUrl = $repoUrl."/stats/contributors";
+        $result = $this->checkForRateLimitError(json_decode($this->requestEngine->get($contributorsDataUrl)));
+        if (isset($result[0])) {
+            return $this->checkForRateLimitError(json_decode($this->requestEngine->get($contributorsDataUrl))[0]->total);
         } else {
-            // FIXME Number of repos null/not numeric
+            return 0;
         }
     }
 
-    /**
-     * Retrieves sum of all commits from all the user's repositories from github API
-     * @return integer  Total number of commits
-     */
-    public function getNumberOfCommits() {
-        $numberOfCommits = 0;
-        $userData = json_decode($this->requestEngine->get(githubApi::USER_URL));
-        $reposData = json_decode($this->requestEngine->get($userData->repos_url));
-
-        foreach ($reposData as $repoId => $repo) {
-            $contributorsDataUrl = str_replace("{/sha}", "", $repo->url)."/stats/contributors";
-
-            $commitsData = json_decode($this->requestEngine->get($contributorsDataUrl));
-
-            if (isset($commitsData[0])) $numberOfCommits += $commitsData[0]->total;
+    private function checkForRateLimitError($result) {
+        if (isset($result->message) && strpos($result->message, 'API rate limit exceeded') !== FALSE) {
+            die("Github API rate limit exceeded. Stopping script.");
+        } else {
+            return $result;
         }
-
-        return $numberOfCommits;
     }
 }
