@@ -15,6 +15,7 @@ $githubRepos = $dataApi->getGithubRepos();
         <link rel="stylesheet" href="css/main.css" charset="utf-8">
         <link rel="stylesheet" href="css/boxes.css" charset="utf-8">
         <link rel="stylesheet" href="css/modal.css" charset="utf-8">
+        <link rel="stylesheet" href="css/github.css" charset="utf-8">
     </head>
 
     <body>
@@ -48,7 +49,7 @@ $githubRepos = $dataApi->getGithubRepos();
                             <h2><?php echo $githubGeneralStats['total_commits']; ?> commits</h2>
                         </div>
 
-                        <div class="modal-content absolute-center">
+                        <div class="modal-content absolute-center" id="github-modal-content">
                             <?php include 'tmpl/github-main.php'; ?>
                         </div>
                     </div>
@@ -74,6 +75,7 @@ $githubRepos = $dataApi->getGithubRepos();
         <script src="js/jquery-1.11.3.js"></script>
 
         <!-- Page scripts  -->
+        <script src="js/tramvai/githubView.js"></script>
         <script src="js/tramvai/mainPage.js"></script>
         <script src="js/main.js"></script>
     </body>
