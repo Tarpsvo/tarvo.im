@@ -9,7 +9,7 @@ var githubView = (function() {
     displayGithubContent = function() {
         modalContent.show();
         bottomBoxes.show();
-        largeStats.css('top', '-400px');
+        largeStats.css('top', '-360px');
 
         setTimeout(function() {
             topInfo.fadeIn(400);
