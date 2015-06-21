@@ -1,5 +1,5 @@
 <div id="github-top-info">
-    <div class="absolute-center" id="github-top-info-text-wrap">
+    <div class="absolute-center modal-top-info-text">
         <h1>Tramvai</h1>
         <h2><?php echo $githubGeneralStats['total_repos']; ?> repos &#183; <?php echo $githubGeneralStats['total_commits']; ?> commits</h2>
         <h3>github</h3>
