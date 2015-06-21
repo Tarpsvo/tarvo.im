@@ -46,13 +46,30 @@
 .modal-top-info-text h1 {
     font-size: 32px;
     margin-bottom: 8px;
+
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
 }
 
 .modal-top-info-text h2 {
-    font-size: 14px;
-    margin-bottom: 5px;
+    font-size: 12px;
+    margin-bottom: 4px;
+    font-weight: 600;
 }
 
 .modal-top-info-text h3 {
     font-size: 10px;
+    margin-bottom: 6px;
+    color: rgba(255, 255, 255, .6);
+}
+
+.modal-top-info-overlay {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .4) url('../img/grid.png');
+}
+
+.tracker-logo {
+    margin: 0 auto;
+    height: 16px;
+    width: 16px;
 }

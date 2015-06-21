@@ -5,6 +5,14 @@
     height: 340px;
     position: relative;
     display: none;
+
+    background: url('../img/coding.jpg') no-repeat center bottom;
+    background-size: cover;
+}
+
+#github-tracker-logo {
+    background: url('../img/github.png') no-repeat center center;
+    background-size: contain;
 }
 
 #github-bottom-boxes {

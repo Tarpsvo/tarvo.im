@@ -1,8 +1,11 @@
 <div id="endomondo-top-info">
-    <div class="absolute-center modal-top-info-text">
-        <h1>Tarvo</h1>
-        <h2><?php echo $endomondoGeneralStats['total_workouts']; ?> workouts &#183; <?php echo $endomondoGeneralStats['total_kilometres']; ?> km</h2>
-        <h3>endomondo</h3>
+    <div class="modal-top-info-overlay">
+        <div class="absolute-center modal-top-info-text">
+            <h1>Tarvo</h1>
+            <h2><?php echo $endomondoGeneralStats['total_workouts']; ?> workouts &#183; <?php echo $endomondoGeneralStats['total_kilometres']; ?> km</h2>
+            <h3>endomondo</h3>
+            <div class="tracker-logo" id="endomondo-tracker-logo"></div>
+        </div>
     </div>
 </div>
 
