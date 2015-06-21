@@ -33,8 +33,6 @@ $endomondoGeneralStats = $dataApi->getEndomondoGeneralStats();
 
                         <div class="modal-loading-indicator"></div>
                     </div>
-
-                    <div class="tracker-logo" id="tracker-endomondo"><p>endomondo</p></div>
                 </div>
             </div>
 
@@ -50,8 +48,6 @@ $endomondoGeneralStats = $dataApi->getEndomondoGeneralStats();
 
                         <div class="modal-loading-indicator"></div>
                     </div>
-
-                    <div class="tracker-logo" id="tracker-github"><p>github</p></div>
                 </div>
             </div>
 
