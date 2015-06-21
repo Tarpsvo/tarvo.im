@@ -67,12 +67,9 @@ $endomondoGeneralStats = $dataApi->getEndomondoGeneralStats();
 
         <!-- Main scripts -->
         <script src="js/jquery-1.11.3.js"></script>
-        <script src="js/underscore.js"></script>
-        <script src="js/backbone.js"></script>
 
-        <!-- Angular -->
+        <!-- Page scripts  -->
         <script src="js/tramvai/mainPage.js"></script>
-
-        <!-- UI effects -->
+        <script src="js/main.js"></script>
     </body>
 </html>
