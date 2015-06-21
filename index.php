@@ -45,7 +45,7 @@ $endomondoGeneralStats = $dataApi->getEndomondoGeneralStats();
                     <a class="close-modal-button">×</a>
 
                     <div class="large-stats absolute-center">
-                        <h2><?php echo $githubGeneralStats['repository_count']; ?> repos</h2>
+                        <h2><?php echo $githubGeneralStats['total_repos']; ?> repos</h2>
                         <h2><?php echo $githubGeneralStats['total_commits']; ?> commits</h2>
 
                         <div class="modal-loading-indicator"></div>

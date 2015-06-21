@@ -14,7 +14,7 @@ class mainConfig {
             $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             return $connection;
         } catch (PDOException $e) {
-            returnError($e->getMessage());
+            die($e->getMessage());
         }
     }
 }

@@ -1,9 +1,12 @@
-CREATE TABLE IF NOT EXISTS `github_general` (
-    `id` int(11) NOT NULL AUTO_INCREMENT,
-    `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    `repository_count` int(11) NOT NULL,
-    `total_commits` int(11) NOT NULL,
-    PRIMARY KEY (`id`)
+CREATE TABLE IF NOT EXISTS `github_repos` (
+    `id` int(11) NOT NULL,
+    `name` varchar(255) NOT NULL,
+    `created` datetime NOT NULL,
+    `pushed` datetime NOT NULL,
+    `commits` int(11) NOT NULL,
+    `html_url` varchar(255) NOT NULL,
+    PRIMARY KEY (`id`),
+    UNIQUE KEY `id` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS `endomondo_workouts` (
