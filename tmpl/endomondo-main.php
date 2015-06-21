@@ -28,7 +28,7 @@
                 echo "</div>";
 
                 echo "<h1>".$date."</h1>";
-                echo "<p>".$weekStats->total_distance." &#183; ".$totalDuration." &#183; ".$weekStats->total_calories." calories</p>";
+                echo "<p>".$weekStats->total_distance."km &#183; ".$totalDuration." &#183; ".$weekStats->total_calories." calories</p>";
             echo "</div>";
         echo "</div>";
     }
