@@ -9,8 +9,7 @@ var mainPage = (function() {
         div.css('margin-top', marginTop);
 
         if (div.parent().is('#sport-box')) {
-            div.find('.close-modal-button').fadeIn(500);
-            div.find('.modal-loading-indicator').fadeIn(500);
+            setTimeout(function() { endomondoView.displayEndomondoContent(); }, 300);
         } else if (div.parent().is('#coding-box')) {
             setTimeout(function() { githubView.displayGithubContent(); }, 300);
         } else if (div.parent().is('#notes-box')) {
@@ -27,8 +26,7 @@ var mainPage = (function() {
         div.css('margin-top', '0px');
 
         if (div.parent().is('#sport-box')) {
-            div.find('.close-modal-button').hide();
-            div.find('.modal-loading-indicator').hide();
+            endomondoView.hideEndomondoContent();
         } else if (div.parent().is('#coding-box')) {
             githubView.hideGithubContent();
         } else if (div.parent().is('#notes-box')) {

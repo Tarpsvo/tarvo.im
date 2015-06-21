@@ -1,39 +1,39 @@
-var githubView = (function() {
-    var modalContent = $('#github-modal-content');
-    var topInfo = $('#github-top-info');
-    var bottomBoxes = $('#github-bottom-boxes');
+var endomondoView = (function() {
+    var modalContent = $('#endomondo-modal-content');
+    var topInfo = $('#endomondo-top-info');
+    var bottomBars = $('#endomondo-bottom-bars');
     var largeStats = modalContent.parent().find('.large-stats');
     var closeModalButton = modalContent.parent().parent().find('.close-modal-button');
-    var repoBoxes = $('.github-repo-box');
+    var weekBars = $('.endomondo-week-bar');
 
-    displayGithubContent = function() {
+    displayEndomondoContent = function() {
         modalContent.show();
-        bottomBoxes.show();
+        bottomBars.show();
         largeStats.css('top', '-400px');
 
         setTimeout(function() {
             topInfo.fadeIn(400);
             largeStats.hide();
-            displayAllRepoBoxes();
+            displayAllWeekBars();
             closeModalButton.fadeIn(500);
         }, 300);
     }
 
-    hideGithubContent = function() {
+    hideEndomondoContent = function() {
         modalContent.hide();
-        bottomBoxes.hide();
+        bottomBars.hide();
         topInfo.hide();
         largeStats.css('top', '0px');
         closeModalButton.hide();
-        repoBoxes.removeClass('show');
+        weekBars.removeClass('show');
         largeStats.show();
     }
 
-    displayAllRepoBoxes = function() {
+    displayAllWeekBars = function() {
         var timeout = 60;
         var inc = timeout;
 
-        repoBoxes.each(function() {
+        weekBars.each(function() {
             var elem = $(this);
             setTimeout(function() {
                 elem.addClass('show');
@@ -44,7 +44,7 @@ var githubView = (function() {
     }
 
     return {
-        displayGithubContent: displayGithubContent,
-        hideGithubContent: hideGithubContent
+        displayEndomondoContent: displayEndomondoContent,
+        hideEndomondoContent: hideEndomondoContent
     }
 })();
