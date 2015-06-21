@@ -50,4 +50,49 @@ class dataApi {
         $result = $result->fetchAll(PDO::FETCH_OBJ);
         return $result;
     }
+
+    public function getEndomondoLastFiveWeekWorkouts() {
+        for ($i=0; $i <= 4; $i++) {
+            $weekWorkouts[$i] = new stdClass();
+            $weekWorkouts[$i]->start_date = $this->getPreviousWeeks($i)['start'];
+            $weekWorkouts[$i]->end_date = $this->getPreviousWeeks($i)['end'];
+        }
+
+        foreach ($weekWorkouts as $key => $week) {
+            $sql = "SELECT distance, duration, calories FROM endomondo_workouts WHERE CAST(start_time AS DATE) BETWEEN '".$week->start_date."' AND '".$week->end_date."'";
+            $result = $this->connection->query($sql);
+            $result = $result->fetchAll(PDO::FETCH_OBJ);
+            $weekWorkouts[$key]->workouts = $result;
+        }
+
+        return $weekWorkouts;
+    }
+
+    public function getEndomondoLastFiveWeekStats() {
+        for ($i=0; $i <= 4; $i++) {
+            $weekStats[$i] = new stdClass();
+            $weekStats[$i]->start_date = $this->getPreviousWeeks($i)['start'];
+            $weekStats[$i]->end_date = $this->getPreviousWeeks($i)['end'];
+        }
+
+        foreach ($weekStats as $key => $week) {
+            $sql = "SELECT SUM(distance), SUM(duration), SUM(calories), COUNT(*) FROM endomondo_workouts WHERE CAST(start_time AS DATE) BETWEEN '".$week->start_date."' AND '".$week->end_date."'";
+            $result = $this->connection->query($sql);
+            $result = $result->fetchAll(PDO::FETCH_ASSOC);
+            $weekStats[$key]->total_distance = (isset($result[0]['SUM(distance)'])) ? round($result[0]['SUM(distance)']) : 0;
+            $weekStats[$key]->total_duration = (isset($result[0]['SUM(duration)'])) ? $result[0]['SUM(duration)'] : 0;
+            $weekStats[$key]->total_calories = (isset($result[0]['SUM(calories)'])) ? $result[0]['SUM(calories)'] : 0;
+            $weekStats[$key]->total_workouts = (isset($result[0]['COUNT(*)'])) ? $result[0]['COUNT(*)'] : 0;
+        }
+
+        return $weekStats;
+    }
+
+    public function getPreviousWeeks($weeksAgo = 0) {
+        date_default_timezone_set(date_default_timezone_get());
+        $dateTime = ($weeksAgo == 0) ? strtotime('now') : strtotime('-'.$weeksAgo.' weeks');
+        $week['start'] = date('N', $dateTime)==1 ? date('Y-m-d', $dateTime) : date('Y-m-d', strtotime('last monday', $dateTime));
+        $week['end'] = date('N', $dateTime)==7 ? date('Y-m-d', $dateTime) : date('Y-m-d', strtotime('next sunday', $dateTime));
+        return $week;
+    }
 }

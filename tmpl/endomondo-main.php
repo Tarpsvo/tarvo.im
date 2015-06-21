@@ -7,68 +7,30 @@
 </div>
 
 <div id="endomondo-bottom-bars">
-    <div class="endomondo-week-bar">
-        <div class="endomondo-week-bar-overlay">
-            <div class="endomondo-week-circle-outer">
-                <div class="endomondo-week-circle">
-                    <h2>4</h2>
-                    <h3>total</h3>
-                </div>
-            </div>
-            <h1>15 June - 21 June</h1>
-            <p>110km &#183; 05h:43m &#183; 4320 calories</p>
-        </div>
-    </div>
+    <?php
+    foreach ($endomondoLastFiveWeekStats as $weekNumber => $weekStats) {
+        $mins = $weekStats->total_duration/60;
+        $hours = intval($mins/60);
+        $minutes = $mins % 60;
+        $totalDuration = $hours."h:".$minutes."m";
 
-    <div class="endomondo-week-bar">
-        <div class="endomondo-week-bar-overlay">
-            <div class="endomondo-week-circle-outer">
-                <div class="endomondo-week-circle">
-                    <h2>4</h2>
-                    <h3>total</h3>
-                </div>
-            </div>
-            <h1>15 June - 21 June</h1>
-            <p>110km &#183; 05h:43m &#183; 4320 calories</p>
-        </div>
-    </div>
+        $startDay = date('j', strtotime($weekStats->start_date));
+        $endDay = date('j M', strtotime($weekStats->end_date));
+        $date = $startDay." - ".$endDay;
 
-    <div class="endomondo-week-bar">
-        <div class="endomondo-week-bar-overlay">
-            <div class="endomondo-week-circle-outer">
-                <div class="endomondo-week-circle">
-                    <h2>4</h2>
-                    <h3>total</h3>
-                </div>
-            </div>
-            <h1>15 June - 21 June</h1>
-            <p>110km &#183; 05h:43m &#183; 4320 calories</p>
-        </div>
-    </div>
+        echo "<div class='endomondo-week-bar'>";
+            echo "<div class='endomondo-week-bar-overlay'>";
+                echo "<div class='endomondo-week-circle-outer'>";
+                    echo "<div class='endomondo-week-circle'>";
+                        echo "<h2>".$weekStats->total_workouts."</h2>";
+                        echo "<h3>total</h3>";
+                    echo "</div>";
+                echo "</div>";
 
-    <div class="endomondo-week-bar">
-        <div class="endomondo-week-bar-overlay">
-            <div class="endomondo-week-circle-outer">
-                <div class="endomondo-week-circle">
-                    <h2>4</h2>
-                    <h3>total</h3>
-                </div>
-            </div>
-            <h1>15 June - 21 June</h1>
-            <p>110km &#183; 05h:43m &#183; 4320 calories</p>
-        </div>
-    </div>
-
-    <div class="endomondo-week-bar">
-        <div class="endomondo-week-bar-overlay">
-            <div class="endomondo-week-circle-outer">
-                <div class="endomondo-week-circle">
-                    <h2>4</h2>
-                    <h3>total</h3>
-                </div>
-            </div>
-            <h1>15 June - 21 June</h1>
-            <p>110km &#183; 05h:43m &#183; 4320 calories</p>
-        </div>
-    </div>
+                echo "<h1>".$date."</h1>";
+                echo "<p>".$weekStats->total_distance." &#183; ".$totalDuration." &#183; ".$weekStats->total_calories." calories</p>";
+            echo "</div>";
+        echo "</div>";
+    }
+    ?>
 </div>

@@ -4,6 +4,7 @@ $dataApi = new dataApi;
 $githubGeneralStats = $dataApi->getGithubGeneralStats();
 $endomondoGeneralStats = $dataApi->getEndomondoGeneralStats();
 $githubRepos = $dataApi->getGithubRepos();
+$endomondoLastFiveWeekStats = $dataApi->getEndomondoLastFiveWeekStats();
 ?>
 <!DOCTYPE html>
 <html>
