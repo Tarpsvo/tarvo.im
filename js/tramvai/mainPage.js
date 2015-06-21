@@ -13,6 +13,7 @@ var mainPage = (function() {
         } else if (div.parent().is('#coding-box')) {
             setTimeout(function() { githubView.displayGithubContent(); }, 300);
         } else if (div.parent().is('#notes-box')) {
+            div.parent().find('.close-modal-button').fadeIn('500');
             div.css('margin-left', '-360px');
         }
     }
@@ -30,6 +31,7 @@ var mainPage = (function() {
         } else if (div.parent().is('#coding-box')) {
             githubView.hideGithubContent();
         } else if (div.parent().is('#notes-box')) {
+            div.parent().find('.close-modal-button').hide();
             div.css('margin-left', '0px');
         }
     }

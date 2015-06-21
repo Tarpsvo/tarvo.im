@@ -9,7 +9,7 @@ var endomondoView = (function() {
     displayEndomondoContent = function() {
         modalContent.show();
         bottomBars.show();
-        largeStats.css('top', '-400px');
+        largeStats.css('top', '-460px');
 
         setTimeout(function() {
             topInfo.fadeIn(400);
