@@ -5,7 +5,7 @@ var mainPage = (function() {
 
         div.addClass('modal-opened');
         div.removeClass('box-content modal-trigger');
-        div.css('margin-top', '-220px');
+        div.css('margin-top', '-230px');
 
         if (div.parent().is('#sport-box')) {
             setTimeout(function() { endomondoView.displayEndomondoContent(); }, 300);
