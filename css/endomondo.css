@@ -5,6 +5,14 @@
     height: 230px;
     position: relative;
     display: none;
+
+    background: url('../img/sport.jpg') no-repeat center bottom;
+    background-size: cover;
+}
+
+#endomondo-tracker-logo {
+    background: url('../img/endomondo.png') no-repeat center center;
+    background-size: contain;
 }
 
 #endomondo-bottom-bars {
@@ -39,7 +47,7 @@
 }
 
 .endomondo-week-bar:nth-child(odd) {
-    background-color: #F5F5F5;
+    background-color: #FAFAFA;
 }
 
 .endomondo-week-bar-overlay {
@@ -104,7 +112,7 @@
     position: absolute;
     left: 0;
     right: 0;
-    top: 30px;
+    top: 32px;
 }
 
 /* Data styles */
@@ -119,8 +127,8 @@
 
 .endomondo-week-bar p {
     color: #333;
-    font-weight: 400;
-    font-size: 14px;
+    font-weight: 600;
+    font-size: 13px;
 
     position: absolute;
     bottom: 25px;

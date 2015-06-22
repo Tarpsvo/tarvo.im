@@ -34,3 +34,13 @@ CREATE TABLE IF NOT EXISTS `endomondo_workouts` (
     PRIMARY KEY (`workout_id`),
     UNIQUE KEY `workout_id` (`workout_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE IF NOT EXISTS `last_updates` (
+    `name` varchar(255) NOT NULL,
+    `updated` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
+    `total_updates` int(11) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO `last_updates` (`name`) VALUES
+('endomondo'),
+('github');
