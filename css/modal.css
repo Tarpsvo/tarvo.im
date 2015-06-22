@@ -1,5 +1,5 @@
 .modal-opened {
-    height: 680px !important;
+    height: 600px !important;
     width: 680px;
     background-color: #1E252F;
     cursor: default;
@@ -38,7 +38,7 @@
 }
 
 .modal-top-info-text {
-    height: 80px;
+    height: 90px;
     width: 200px;
     text-align: center;
 }
