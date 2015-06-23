@@ -2,14 +2,14 @@ var githubView = (function() {
     var modalContent = $('#github-modal-content');
     var topInfo = $('#github-top-info');
     var bottomBoxes = $('#github-bottom-boxes');
-    var largeStats = modalContent.parent().find('.large-stats');
+    var largeStats = modalContent.parent().find('.center-text-img');
     var closeModalButton = modalContent.parent().parent().find('.close-modal-button');
     var repoBoxes = $('.github-repo-box');
 
     displayGithubContent = function() {
         modalContent.show();
         bottomBoxes.show();
-        largeStats.css('top', '-360px');
+        largeStats.css('top', '-400px');
 
         setTimeout(function() {
             topInfo.fadeIn(400);

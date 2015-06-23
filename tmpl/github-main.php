@@ -1,7 +1,7 @@
 <div id="github-top-info">
     <div class="modal-top-info-overlay">
         <div class="absolute-center modal-top-info-text">
-            <h1>Tramvai</h1>
+            <h1>@Tramvai</h1>
             <h2><?php echo $githubGeneralStats['total_repos']; ?> repos &#183; <?php echo $githubGeneralStats['total_commits']; ?> commits</h2>
             <h3>github</h3>
             <div class="tracker-logo" id="github-tracker-logo"></div>

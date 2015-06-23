@@ -24,15 +24,16 @@ $endomondoLastFiveWeekStats = $dataApi->getEndomondoLastFiveWeekStats();
         <div id="page-loading-indicator" class="absolute-center"></div>
 
         <div class="absolute-center" id="page-content-wrap">
-            <div class="left-side-box" style="top: 0;" id="sport-box">
-                <h1 class="box-title">SPORT</h1>
+            <div class="main-page-top-box">
+                <h1>Tarvo<span class="underscore">_</span></h1>
+            </div>
 
-                <div class="box-content left-side-box-content modal-trigger">
+            <div class="main-page-box" style="left: 0;" id="sport-box">
+                <div class="box-content main-page-box-content modal-trigger">
                     <a class="close-modal-button">×</a>
 
-                    <div class="large-stats absolute-center">
-                        <h2><?php echo $endomondoGeneralStats['total_workouts']; ?> workouts</h2>
-                        <h2><?php echo $endomondoGeneralStats['total_kilometres']; ?> kilometres</h2>
+                    <div class="center-text-img absolute-center">
+                        <h2>SPORT</h2>
                     </div>
 
                     <div class="modal-content absolute-center" id="endomondo-modal-content">
@@ -41,35 +42,18 @@ $endomondoLastFiveWeekStats = $dataApi->getEndomondoLastFiveWeekStats();
                 </div>
             </div>
 
-            <div class="left-side-box" style="bottom: 0;" id="coding-box">
-                <h1 class="box-title">CODING</h1>
-
-                <div class="box-content left-side-box-content modal-trigger">
+            <div class="main-page-box" style="right: 0;" id="coding-box">
+                <div class="box-content main-page-box-content modal-trigger">
                     <a class="close-modal-button">×</a>
 
                     <div class="modal-content-wrapper">
-                        <div class="large-stats absolute-center">
-                            <h2><?php echo $githubGeneralStats['total_repos']; ?> repos</h2>
-                            <h2><?php echo $githubGeneralStats['total_commits']; ?> commits</h2>
+                        <div class="center-text-img absolute-center">
+                            <h2>CODING</h2>
                         </div>
 
                         <div class="modal-content absolute-center" id="github-modal-content">
                             <?php include 'tmpl/github-main.php'; ?>
                         </div>
-                    </div>
-                </div>
-            </div>
-
-            <div id="notes-box">
-                <h1 class="box-title">NOTES</h1>
-
-                <div id="notes-box-content" class="box-content modal-trigger">
-                    <a class="close-modal-button">×</a>
-
-                    <div class="large-stats absolute-center">
-                        <h2>todo</h2>
-
-                        <div class="modal-loading-indicator"></div>
                     </div>
                 </div>
             </div>

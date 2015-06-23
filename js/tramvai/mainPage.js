@@ -2,15 +2,15 @@ var mainPage = (function() {
     openModal = function(e) {
         e.stopPropagation();
         var div = $(e.currentTarget);
-        var marginTop = (div.parent().is('#coding-box')) ? '-370px' : '-30px';
 
         div.addClass('modal-opened');
         div.removeClass('box-content modal-trigger');
-        div.css('margin-top', marginTop);
+        div.css('margin-top', '-230px');
 
         if (div.parent().is('#sport-box')) {
             setTimeout(function() { endomondoView.displayEndomondoContent(); }, 300);
         } else if (div.parent().is('#coding-box')) {
+            div.css('margin-left', '-340px');
             setTimeout(function() { githubView.displayGithubContent(); }, 300);
         } else if (div.parent().is('#notes-box')) {
             div.parent().find('.close-modal-button').fadeIn('500');
@@ -29,6 +29,7 @@ var mainPage = (function() {
         if (div.parent().is('#sport-box')) {
             endomondoView.hideEndomondoContent();
         } else if (div.parent().is('#coding-box')) {
+            div.css('margin-left', '0px');
             githubView.hideGithubContent();
         } else if (div.parent().is('#notes-box')) {
             div.parent().find('.close-modal-button').hide();
