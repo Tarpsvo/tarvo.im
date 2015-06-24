@@ -8,6 +8,10 @@ Live version is accessible at [tarvo.im](http://tarvo.im/)
 * Endomondo data querying
 * Detailed views for coding and sports
 
+### TODO
+* Endomondo general statistic view
+* GitHub repositories detailed views
+
 ### Used resources
 * [Endomondo logo](https://www.iconfinder.com/icons/143904/edomondo_icon)
 * [Github logo](https://github.com/logos)
@@ -16,6 +20,7 @@ Live version is accessible at [tarvo.im](http://tarvo.im/)
 * [UUID v5 generator](https://github.com/ramsey/uuid)
 * [Bicycle logo](https://www.flickr.com/photos/martinmontingelli/5590724512)
 * [Coding logo](http://www.flaticon.com/free-icon/wide-flat-screen-laptop_23283)
+* [Programming language logos](https://github.com/konpa/devicon/)
 
 ### Licensed under the GNU GPL v2.0 license
 Copyright (C) 2015 Tarvo R.

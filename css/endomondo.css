@@ -1,23 +1,28 @@
 /* endomondo.css */
 
+/* Main stuff */
+#sport-box .modal-opened {
+    height: 500px !important;
+}
+
 /* Endomondo modal content design */
 #endomondo-top-info {
     height: 150px;
     position: relative;
-    display: none;
+    background-color: rgba(60, 100, 170, .4);
+    text-shadow: 0 1px 1px rgba(0, 0, 0, .3);
 
-    background: url('../img/sport.jpg') no-repeat center bottom;
-    background-size: cover;
+    display: none;
 }
 
-#endomondo-tracker-logo {
-    background: url('../img/endomondo.png') no-repeat center center;
+#sport-logo {
+    background: url('../img/sport.png') no-repeat center center;
     background-size: contain;
 }
 
 #endomondo-bottom-bars {
     width: 100%;
-    height: 450px;
+    height: 350px;
 
     position: absolute;
     bottom: 0;
@@ -25,8 +30,9 @@
     display: none;
 }
 
+/* Bottom week bars */
 .endomondo-week-bar {
-    height: 90px;
+    height: 70px;
     width: 100%;
 
     opacity: 0;
@@ -46,18 +52,14 @@
     background-color: #FFF;
 }
 
-.endomondo-week-bar:nth-child(odd) {
-    background-color: #FAFAFA;
-}
-
 .endomondo-week-bar-overlay {
     height: 100%;
     width: 100%;
 }
 
 .endomondo-week-bar-overlay:hover {
-    background-color: rgba(0, 0, 0, .1);
-    cursor: pointer;
+    background-color: rgba(0, 0, 0, .03);
+    /*cursor: pointer;*/
 }
 
 .endomondo-week-bar.show {
@@ -71,21 +73,21 @@
 
 /* Week circle styles */
 .endomondo-week-circle-outer {
-    height: 70px;
-    width: 70px;
+    height: 50px;
+    width: 50px;
     margin: 10px;
 
     float: left;
     position: relative;
 
-    border-radius: 70px;
+    border-radius: 50px;
     background-color: #8BC34A;
 }
 
 .endomondo-week-circle {
-    height: 60px;
-    width: 60px;
-    margin: 5px;
+    height: 44px;
+    width: 44px;
+    margin: 3px;
     position: relative;
 
     border-radius: 60px;
@@ -96,41 +98,43 @@
 
 .endomondo-week-circle h2 {
     font-weight: 600;
-    font-size: 18px;
+    font-size: 15px;
     color: #333;
 
     position: absolute;
     left: 0;
     right: 0;
-    top: 10px;
+    top: 7px;
 }
 
 .endomondo-week-circle h3 {
-    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
     color: #333;
 
     position: absolute;
     left: 0;
     right: 0;
-    top: 32px;
+    top: 23px;
 }
 
 /* Data styles */
 .endomondo-week-bar h1 {
-    color: #333;
+    font-family: 'Roboto', sans-serif;
     font-size: 18px;
-    font-weight: 600;
+    color: rgba(0, 0, 0, .9);
+
     position: absolute;
-    top: 20px;
-    left: 100px;
+    top: 18px;
+    left: 80px;
 }
 
 .endomondo-week-bar p {
-    color: #333;
     font-weight: 600;
-    font-size: 13px;
+    color: rgba(0, 0, 0, .8);
+    font-size: 11px;
 
     position: absolute;
-    bottom: 25px;
-    left: 100px;
+    bottom: 16px;
+    left: 80px;
 }

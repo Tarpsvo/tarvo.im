@@ -1,5 +1,4 @@
 .modal-opened {
-    height: 600px !important;
     width: 680px;
     background-color: #1E252F;
     cursor: default;
@@ -38,21 +37,14 @@
 }
 
 .modal-top-info-text {
-    height: 90px;
+    height: 75px;
     width: 200px;
     text-align: center;
 }
 
-.modal-top-info-text h1 {
-    font-size: 32px;
-    margin-bottom: 8px;
-
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
-}
-
 .modal-top-info-text h2 {
-    font-size: 12px;
-    margin-bottom: 4px;
+    font-size: 11px;
+    margin-top: 4px;
     font-weight: 600;
 }
 
@@ -65,11 +57,11 @@
 .modal-top-info-overlay {
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, .4) url('../img/grid.png');
+    background: url('../img/grid.png');
 }
 
 .tracker-logo {
     margin: 0 auto;
-    height: 16px;
-    width: 16px;
+    height: 60px;
+    width: 200px;
 }
