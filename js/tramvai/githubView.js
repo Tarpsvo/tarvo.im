@@ -9,7 +9,8 @@ var githubView = (function() {
     displayGithubContent = function() {
         modalContent.show();
         bottomBoxes.show();
-        largeStats.css('top', '-400px');
+        largeStats.css('top', '-340px');
+        $('.main-page-top-box').hide();
 
         setTimeout(function() {
             topInfo.fadeIn(400);
@@ -27,6 +28,7 @@ var githubView = (function() {
         closeModalButton.hide();
         repoBoxes.removeClass('show');
         largeStats.show();
+        $('.main-page-top-box').show();
     }
 
     displayAllRepoBoxes = function() {

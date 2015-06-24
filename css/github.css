@@ -2,21 +2,20 @@
 
 /* Main stuff */
 #coding-box .modal-opened {
-    height: 600px !important;
+    height: 490px !important;
 }
 
 /* Github modal content design */
 #github-top-info {
-    height: 260px;
+    height: 150px;
     position: relative;
-    display: none;
+    background-color: rgba(240, 150, 50, .4);
 
-    background: url('../img/coding.jpg') no-repeat center bottom;
-    background-size: cover;
+    display: none;
 }
 
-#github-tracker-logo {
-    background: url('../img/github.png') no-repeat center center;
+#coding-logo {
+    background: url('../img/coding.png') no-repeat center center;
     background-size: contain;
 }
 
@@ -30,10 +29,13 @@
     display: none;
 }
 
+/* Repository boxes design */
 .github-repo-box {
     height: 50%;
     width: 25%;
     float: left;
+
+    background-color: rgba(0, 0, 0, .3);
 
     opacity: 0;
 
@@ -60,21 +62,31 @@
 }
 
 .github-repo-box-text-wrap {
-    height: 50px;
+    height: 80px;
     width: 100%;
 
     text-align: center;
+
+    -webkit-transform: scale(0.9);
+    -moz-transform: scale(0.9);
+    -o-transform: scale(0.9);
+    transform: scale(0.9);
+
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
 }
 
 .github-repo-box-text-wrap h1 {
     font-weight: 600;
-    font-size: 16px;
+    font-size: 14px;
     margin-bottom: 6px;
     text-shadow: 0 1px 1px rgba(0, 0, 0, .5);
 }
 
 .github-repo-box-text-wrap h2 {
-    font-size: 12px;
+    font-size: 10px;
     margin-bottom: 5px;
 }
 
@@ -85,30 +97,47 @@
 .github-repo-box-overlay {
     height: 100%;
     width: 100%;
+
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
 }
 
 .github-repo-box-overlay:hover {
-    background-color: rgba(255, 255, 255, .1);
-    cursor: pointer;
+    /*cursor: pointer;*/
+}
+
+.github-repo-box-overlay:hover .github-repo-box-text-wrap {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+}
+
+.language-logo {
+    height: 36px;
+    width: 60px;
+    margin: 0px auto;
+    margin-bottom: 10px;
+
+    background-size: contain;
+    background-position: center bottom;
+    background-repeat: no-repeat;
 }
 
 /* Custom repo styles */
-#repo-box-pompsusimulaator {
-    background-color: #66BB6A;
-}
+#repo-box-pompsusimulaator .language-logo {background-image: url('../img/java.svg');}
+#repo-box-pompsusimulaator .github-repo-box-overlay:hover {background-color: rgba(239, 108, 0, .3);}
 
-#repo-box-hobocalypse {
-    background-color: #9E9E9E;
-}
+#repo-box-hobocalypse .language-logo {background-image: url('../img/html5.svg');}
+#repo-box-hobocalypse .github-repo-box-overlay:hover {background-color: rgba(239, 83, 80, .3);}
 
-#repo-box-itcq {
-    background-color: #2196F3;
-}
+#repo-box-itcq .language-logo {background-image: url('../img/angularjs.svg');}
+#repo-box-itcq .github-repo-box-overlay:hover {background-color: rgba(183, 28, 28, .3);}
 
-#repo-box-hobosimulator {
-    background-color: #FF9800;
-}
+#repo-box-tarvoim .language-logo {background-image: url('../img/php.svg');}
+#repo-box-tarvoim .github-repo-box-overlay:hover {background-color: rgba(40, 53, 147, .3);}
 
-#repo-box-tarvoim {
-    background-color: #26A69A;
-}
+#repo-box-hobosimulator .language-logo {background-image: url('../img/android.svg');}
+#repo-box-hobosimulator .github-repo-box-overlay:hover {background-color: rgba(46, 125, 50, .3);}
