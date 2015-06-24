@@ -5,12 +5,13 @@ var mainPage = (function() {
 
         div.addClass('modal-opened');
         div.removeClass('box-content modal-trigger');
-        div.css('margin-top', '-230px');
 
         if (div.parent().is('#sport-box')) {
+            div.css('margin-top', '-180px');
             setTimeout(function() { endomondoView.displayEndomondoContent(); }, 300);
         } else if (div.parent().is('#coding-box')) {
             div.css('margin-left', '-340px');
+            div.css('margin-top', '-230px');
             setTimeout(function() { githubView.displayGithubContent(); }, 300);
         } else if (div.parent().is('#notes-box')) {
             div.parent().find('.close-modal-button').fadeIn('500');

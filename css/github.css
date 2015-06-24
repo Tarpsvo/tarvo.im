@@ -1,5 +1,10 @@
 /* github.css */
 
+/* Main stuff */
+#coding-box .modal-opened {
+    height: 600px !important;
+}
+
 /* Github modal content design */
 #github-top-info {
     height: 260px;
