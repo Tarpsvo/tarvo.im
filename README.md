@@ -1,18 +1,19 @@
-## Tarvo.im
-### Personal website
-Live version is accessible at [tarvo.im](http://tarvo.im/)
+# Tarvo.im
+## Personal website
 
-### Current functionalities
+Created as a personal project for a personal website.
+
+## Current functionalities
 * Polished layout and animations
 * GitHub data querying
 * Endomondo data querying
 * Detailed views for coding and sports
 
-### TODO
+## TODO
 * Endomondo general statistic view
 * GitHub repositories detailed views
 
-### Used resources
+## Used resources
 * [Endomondo logo](https://www.iconfinder.com/icons/143904/edomondo_icon)
 * [Github logo](https://github.com/logos)
 * [Loading indicator](https://github.com/jxnblk/loading)
@@ -22,10 +23,8 @@ Live version is accessible at [tarvo.im](http://tarvo.im/)
 * [Coding logo](http://www.flaticon.com/free-icon/wide-flat-screen-laptop_23283)
 * [Programming language logos](https://github.com/konpa/devicon/)
 
-### Licensed under the GNU GPL v2.0 license
-Copyright (C) 2015 Tarvo R.
+## Copyright
 
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
+MIT License
+
+Copyright &copy; 2015 Tarvo Reinpalu
